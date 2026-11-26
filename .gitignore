@@ -6,7 +6,8 @@ bin/
 .*/
 
 # VSCode
-.vscode
+.vscode/*
+!.vscode/settings.json
 
 # MacOS file
 .DS_Store

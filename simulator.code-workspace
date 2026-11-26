@@ -39,6 +39,12 @@
 				"args": [
 					"--build", "${command:cmake.buildDirectory}"
 				],
+				"windows": {
+					"args": [
+						"--build", "${command:cmake.buildDirectory}",
+						"--", "/m:1"
+					]
+				},
 				"group": {
 					"kind": "build",
 					"isDefault": true
@@ -72,6 +78,21 @@
 	"launch": {
 		"version": "0.2.0",
 		"configurations": [
+			{
+				"name": "Debug LVGL demo with cppvsdbg",
+				"type": "cppdbg",
+				"request": "launch",
+				"program": "${workspaceFolder}/bin/main",
+				"args": [],
+				"cwd": "${workspaceFolder}",
+				"preLaunchTask": "Build",
+				"stopAtEntry": false,
+				"MIMode": "lldb",
+				"windows": {
+					"type": "cppvsdbg",
+					"program": "${workspaceFolder}/bin/Debug/main.exe"
+				}
+			},
 			{
 				"name": "Debug LVGL demo with gdb",
 				"type": "cppdbg",

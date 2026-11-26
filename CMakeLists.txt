@@ -52,6 +52,12 @@ set(CMAKE_C_STANDARD 99)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# MSVC writes one PDB per target; /FS serializes those writes so parallel
+# cl.exe invocations (even with MSBuild /m:1) don't hit C1090 PDB errors.
+if(MSVC)
+    add_compile_options(/FS)
+endif()
+
 # Set the output path for the executable
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 

@@ -1,0 +1,9 @@
+{
+    "cmake.configureSettings": {
+        "CMAKE_TOOLCHAIN_FILE": "../vcpkg/scripts/buildsystems/vcpkg.cmake"
+    },
+    "cmake.parallelJobs": 1,
+    "cmake.buildToolArgs": [
+        "/m:1"
+    ]
+}
